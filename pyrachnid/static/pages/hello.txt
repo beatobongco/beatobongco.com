@@ -1,20 +1,25 @@
 The first line is your title
 
-The rest of this is the body which supports [b]bold[/b], [i]italic[/i] and [u]underline[/u] tags. Also supports spacing (ex. 3 spaces  ) and line breaks.
+The rest of this is the body which supports some BB code for formatting.
 
+You know, things like &#91;b&#93Your Text Here&#91;&#47;b&#93; for [b]bold[/b], &#91;i&#93; for [i]italic[/i] and &#91;u&#93; for [u]underline[/u] tags. 
 
-Image tags too like so 
+Pyrachnid also supports spacing (ex. 3 spaces  ) and line breaks.
+
+&#91;img&#93; Image tags, too, like so:
 [img]http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=45377313[/img]
 
-Internally stored images are much easier to add
+Internally stored images are much easier to add using &#91;iimg&#93; (internal image) tags
 [iimg]test-all-the-things.jpg[/iimg]
 
-Smaller image tags
+Smaller image tags are &#91;img2&#93; and &#91;img3&#93;. This works for &#91;iimg&#93; tags as well! :) 
 [iimg2]test-all-the-things.jpg[/iimg]
 [iimg3]test-all-the-things.jpg[/iimg]
 
-Images together
+Images together:
 [iimg3]test-all-the-things.jpg[/iimg][iimg3]test-all-the-things.jpg[/iimg][iimg3]test-all-the-things.jpg[/iimg]
+
+
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut ipsum ac eros suscipit fermentum. Aenean pellentesque posuere turpis sed ornare. Sed scelerisque aliquet mauris vel vestibulum. Morbi mollis, nulla id tempor blandit, massa tellus venenatis felis, in euismod tellus augue id dolor. Quisque sit amet dolor faucibus, scelerisque tortor vitae, ornare urna. Maecenas ut turpis suscipit, fermentum eros ac, dictum sem. Curabitur augue quam, hendrerit feugiat imperdiet id, ullamcorper non metus.
 
