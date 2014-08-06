@@ -1,9 +1,28 @@
-This is my title
+The first line is your title
 
-The rest of this is the body which supports 
+The rest of this is the body which supports [b]bold[/b], [i]itaclic[/i] and [u]underline[/u] tags. Also supports spacing   3 spaces   and line breaks
 
-spacing 
 
-and img tags like so 
+Image tags too like so 
+[img]http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=45377313[/img]
 
-<img src="test-all-the-things.jpg">
+Internally stored images are much easier to add
+[iimg]test-all-the-things.jpg[/iimg]
+
+Smaller image tags
+[iimg2]test-all-the-things.jpg[/iimg]
+[iimg3]test-all-the-things.jpg[/iimg]
+
+Images together
+[iimg3]test-all-the-things.jpg[/iimg][iimg3]test-all-the-things.jpg[/iimg][iimg3]test-all-the-things.jpg[/iimg]
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut ipsum ac eros suscipit fermentum. Aenean pellentesque posuere turpis sed ornare. Sed scelerisque aliquet mauris vel vestibulum. Morbi mollis, nulla id tempor blandit, massa tellus venenatis felis, in euismod tellus augue id dolor. Quisque sit amet dolor faucibus, scelerisque tortor vitae, ornare urna. Maecenas ut turpis suscipit, fermentum eros ac, dictum sem. Curabitur augue quam, hendrerit feugiat imperdiet id, ullamcorper non metus.
+
+Etiam nec nunc dictum, mollis quam id, vulputate nunc. Duis tempus accumsan cursus. Maecenas arcu ante, ornare in condimentum at, placerat in metus. Sed in dapibus eros. Cras ut risus ut lectus venenatis vulputate ac ac enim. Sed in nisi non tortor ultrices mattis. Praesent scelerisque, nunc id sollicitudin suscipit, odio lacus ultrices justo, at imperdiet felis nunc mollis est. Proin urna tortor, hendrerit sit amet ante vitae, tincidunt tincidunt lorem. In dapibus aliquet nisl ac eleifend.
+
+Suspendisse bibendum consequat enim quis congue. Nullam convallis mi nec iaculis bibendum. Vestibulum faucibus, urna sit amet vestibulum vestibulum, neque diam sollicitudin lorem, a egestas sem turpis ac turpis. Curabitur vitae porttitor urna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus varius in risus eget hendrerit. Praesent sodales aliquam semper. Sed turpis metus, ultricies in libero et, blandit cursus ligula. Fusce eu tincidunt lectus. Proin a lacus viverra, elementum ligula sit amet, commodo quam. Phasellus ac purus urna. Aenean id laoreet lorem. Nam eu nulla euismod, consectetur tellus et, facilisis libero.
+
+Nulla in purus convallis, feugiat nunc nec, condimentum eros. Suspendisse at felis quis felis suscipit sollicitudin. Donec consectetur purus eget lacus vulputate, vel condimentum urna faucibus. Donec viverra turpis augue, vitae sollicitudin lacus gravida non. Fusce lobortis velit pretium, venenatis tortor quis, molestie nibh. Aenean porta aliquet arcu. Sed sed nibh laoreet, dictum nisi quis, cursus lectus. Suspendisse interdum volutpat dui semper luctus. Mauris porta justo pellentesque, commodo metus sit amet, eleifend purus. Aliquam ultricies a nulla non cursus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus bibendum sed purus eu vehicula. Vivamus placerat lectus at neque commodo pharetra. Morbi pretium in erat vitae sollicitudin.
+
+Duis ut ornare quam. Integer vestibulum lacus leo, sed condimentum ligula tristique ac. In placerat eu tortor eget fermentum. Integer fermentum mattis neque at interdum. Curabitur et placerat augue, eget vehicula mauris. Nulla laoreet quam a diam adipiscing, vitae pretium mauris semper. Sed adipiscing sapien elit, at ullamcorper nibh rutrum sit amet. Ut nisi tellus, pharetra nec odio ut, egestas tempus felis. Maecenas eget facilisis elit. Cras scelerisque sagittis molestie.
+

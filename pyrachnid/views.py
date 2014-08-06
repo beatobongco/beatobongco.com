@@ -1,7 +1,35 @@
-from flask import Blueprint, render_template, redirect, url_for
+from flask import Blueprint, render_template, redirect, url_for, abort
 from app import app 
 
 import os
+
+# Functions
+
+#Dict for replacement
+replacement = [ 
+  ['[b]' , '<b>'],
+  ['[/b]' , '</b>'],
+  ['[u]' , '<u>'],
+  ['[/u]' , '</u>'],
+  ['[i]' , '<i>'],
+  ['[/i]' , '</i>'],
+  ['[/img]' , '">'],
+  ['[img]' , '<img src="'],
+  ['[img2]' , '<img style="width: 50%; height: 50%" src="'],
+  ['[img3]' , '<img style="width: 25%; height: 25%" src="'],
+  ['[iimg]' , '<img src="../static/img/'],
+  ['[iimg2]' , '<img style="width: 50%; height: 50%" src="../static/img/'],
+  ['[iimg3]' , '<img style="width: 25%; height: 25%" src="../static/img/'],
+  ['[/iimg]' , '">'],
+  ['  ' , '&nbsp;&nbsp;'],
+  ['[/' , '</'],
+]
+
+def replace_all(text, dic):
+  for i, j in replacement:
+    app.logger.debug(i)
+    text = text.replace(i, j)
+  return text
 
 @app.route("/")
 
@@ -17,11 +45,14 @@ def show_page(article):
   content = ""
 
   article_url = url_for('static', filename='pages/' + article + '.txt') 
-
-  with open(full_directory + article_url, 'r') as myarticle:
-    file_content = myarticle.readlines()
+  try:
+    with open(full_directory + article_url, 'r') as myarticle:
+      file_content = myarticle.readlines()
+  except IOError:
+    abort(404)
 
   title = file_content[0]
-  content= '<br>'.join(file_content[1:]).replace('<img src="','<img src="../static/img/')
+
+  content = replace_all('<br>'.join(file_content[1:]), replacement)
 
   return render_template('pages.html', title=title, content=content)
