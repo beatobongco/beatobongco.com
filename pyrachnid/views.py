@@ -27,7 +27,6 @@ replacement = [
 
 def replace_all(text, dic):
   for i, j in replacement:
-    app.logger.debug(i)
     text = text.replace(i, j)
   return text
 
@@ -51,7 +50,10 @@ def show_page(article):
   except IOError:
     abort(404)
 
-  title = file_content[0]
+  try:
+    title = file_content[0]
+  except IndexError:
+    title = "There's nothing here."
 
   content = replace_all('<br>'.join(file_content[1:]), replacement)
 

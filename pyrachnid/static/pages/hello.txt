@@ -1,6 +1,6 @@
 The first line is your title
 
-The rest of this is the body which supports [b]bold[/b], [i]itaclic[/i] and [u]underline[/u] tags. Also supports spacing   3 spaces   and line breaks
+The rest of this is the body which supports [b]bold[/b], [i]italic[/i] and [u]underline[/u] tags. Also supports spacing (ex. 3 spaces  ) and line breaks.
 
 
 Image tags too like so 
