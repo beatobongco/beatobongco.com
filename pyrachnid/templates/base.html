@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+  <link href='../static/css/prism.css' rel='stylesheet' type='text/css'>
+  <link href='../static/css/pages.css' rel='stylesheet' type='text/css'>
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+  <div class="menu">
+    <div class="pure-menu pure-menu-open">
+      <a class="pure-menu-heading">Your Site Name</a>
+
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#">Github</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">About</a></li>
+        <li class="pure-menu-heading">More Categories</li>
+        <li><a href="#">Your Company</a></li>
+        <li><a href="#">Your Friends</a></li>
+        <li><a href="#">Your Links</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="content">
+    {% block page_content %}{% endblock %}
+  </div>
+  <script type="text/javascript" src="http://vuejs.org/js/vue.min.js"></script>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/marked/0.3.1/marked.min.js"></script>
+  <script type="text/javascript" src="../static/js/prism.js"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

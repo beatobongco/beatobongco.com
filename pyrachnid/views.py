@@ -2,38 +2,17 @@ from flask import Blueprint, render_template, redirect, url_for, abort
 from app import app 
 
 import os
+import time
+from collections import OrderedDict
+from operator import itemgetter
 
 #Variables
 static_directory = os.path.dirname(os.path.abspath(__file__)) + "/static/"
 pages_path = "pages/"
 pages_directory = static_directory + pages_path
 
-replacement = [ 
-  ['[b]' , '<b>'],
-  ['[/b]' , '</b>'],
-  ['[u]' , '<u>'],
-  ['[/u]' , '</u>'],
-  ['[i]' , '<i>'],
-  ['[/i]' , '</i>'],
-  ['[/img]' , '">'],
-  ['[img]' , '<img src="'],
-  ['[img2]' , '<img style="width: 50%; height: 50%" src="'],
-  ['[img3]' , '<img style="width: 25%; height: 25%" src="'],
-  ['[iimg]' , '<img src="../static/img/'],
-  ['[iimg2]' , '<img style="width: 50%; height: 50%" src="../static/img/'],
-  ['[iimg3]' , '<img style="width: 25%; height: 25%" src="../static/img/'],
-  ['[/iimg]' , '">'],
-  ['  ' , '&nbsp;&nbsp;'],
-  ['[/' , '</'],
-]
 
 # Functions
-
-#Dict for replacement
-def replace_all(text, dic):
-  for i, j in replacement:
-    text = text.replace(i, j)
-  return text
 
 @app.route("/")
 
@@ -42,21 +21,27 @@ def index():
   all_articles = []
 
   for file in os.listdir(pages_directory):
-    if file.endswith(".txt"):
+    if file.endswith(".md"):
       try:
         with open(pages_directory+file, 'r') as myarticle:
           app.logger.debug("!")
-          all_articles.append([file.replace('.txt', ''), myarticle.readline()])
+          all_articles.append({ 'date' : time.strftime('%d %B %Y %I:%M %p', time.gmtime(os.path.getctime(pages_directory + file))), 'url' : pages_path + file.replace('.md',''), 'name' : myarticle.readline().replace('#','') })
+          
       except IOError:
         pass
 
   app.logger.debug(all_articles)
-  temp_return = ""
 
-  for file, article in all_articles:
-    temp_return = temp_return + "<br>" + "<a href='" + pages_path + file + "'>" + article + "</a>"
+  all_articles.sort(key=lambda x: x['date'], reverse=True)
 
-  return render_template('pages.html', title="Your Site's Name", content=temp_return)
+  
+
+  # temp_return = ""
+
+  # for full_file_path, file, article in all_articles:
+  #   temp_return = temp_return + "<a href='" + pages_path + file + "'>" + article.replace("#","") + "</a>" + "<br>" 
+
+  return render_template('index.html', articles=all_articles)
 
 @app.route("/pages/<article>")
 
@@ -65,18 +50,18 @@ def show_page(article):
   title = ""
   content = ""
 
-  article_url = url_for('static', filename='pages/' + article + '.txt') 
+  article_url = url_for('static', filename=pages_path + article + '.md') 
   try:
-    with open(pages_directory + article + ".txt", 'r') as myarticle:
-      file_content = myarticle.readlines()
+    with open(pages_directory + article + ".md", 'r') as myarticle:
+      file_content = myarticle.read()
   except IOError:
     abort(404)
 
-  try:
-    title = file_content[0]
-  except IndexError:
-    title = "There's nothing here."
+  app.logger.debug(file_content)
+  return render_template('pages.html', title=file_content.split('\n', 1)[0].replace("#",""), content=file_content)
 
-  content = replace_all('<br>'.join(file_content[1:]), replacement)
+@app.route("/pages/<article>/edit")
 
-  return render_template('pages.html', title=title, content=content)
+def edit_page(article):
+
+  return "cool"

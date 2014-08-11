@@ -1,12 +1,11 @@
 body {
-  font-family: 'Open Sans';
+  font-family: 'Source Sans Pro';
+  color: #34495e;
   padding-left: 160px;
 }
 
 body p {
-  font-size: 1.1em;
-  line-height: 1.45455em;
-  width: 30em;
+  
 }
 
 h1 {
@@ -33,7 +32,14 @@ h1 {
   height: 100%;
 }
 
-.blog-post {
+#page_content {
   margin-left: auto;
   margin-right: auto;
+  font-size: 1.1em;
+  line-height: 1.45455em;
+  width: 30em;
+}
+
+code {
+  font-size: 0.75em;
 }
