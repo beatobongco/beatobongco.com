@@ -14,6 +14,15 @@ pages_directory = static_directory + pages_path
 
 # Functions
 
+def get_contents(article):
+  article_url = url_for('static', filename=pages_path + article + '.md') 
+  try:
+    with open(pages_directory + article + ".md", 'r') as myarticle:
+      file_content = myarticle.read()
+  except IOError:
+    abort(404)
+  return file_content
+
 @app.route("/")
 
 def index():
@@ -46,22 +55,12 @@ def index():
 @app.route("/pages/<article>")
 
 def show_page(article):
-  # parsing code goes here
-  title = ""
-  content = ""
+  contents = get_contents(article)
 
-  article_url = url_for('static', filename=pages_path + article + '.md') 
-  try:
-    with open(pages_directory + article + ".md", 'r') as myarticle:
-      file_content = myarticle.read()
-  except IOError:
-    abort(404)
-
-  app.logger.debug(file_content)
-  return render_template('pages.html', title=file_content.split('\n', 1)[0].replace("#",""), content=file_content)
+  return render_template('pages.html', title=contents.split('\n', 1)[0].replace("#",""), content=contents)
 
 @app.route("/pages/<article>/edit")
 
 def edit_page(article):
-
-  return "cool"
+  contents = get_contents(article)
+  return render_template('editor.html', title=contents.split('\n', 1)[0].replace("#",""), content=contents)

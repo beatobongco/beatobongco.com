@@ -1,0 +1,71 @@
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+h1 {
+  text-align: center;
+}
+
+.blog-content {
+  margin-left: auto;
+  margin-right: auto;   
+}
+
+#page_content {
+  font-family: 'Source Sans Pro';
+  color: #34495e;
+  text-rendering: optimizeLegibility;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.1em;
+  line-height: 1.45455em;
+  width: 30em;
+}
+
+code {
+  font-family: "Source Code Pro";
+  font-size: 0.8em;
+  text-rendering: optimizeLegibility;
+}
+/*
+
+@media screen and (max-width:567px) {
+    .pure-visible-sm{display:none}
+    .pure-visible-md{display:none}
+    .pure-visible-lg{display:none}
+    .pure-visible-xl{display:none}
+    .pure-hidden-xs{display:none}
+}
+
+@media screen and (min-width:568px) and (max-width:767px) {
+    .pure-visible-xs{display:none}
+    .pure-visible-md{display:none}
+    .pure-visible-lg{display:none}
+    .pure-visible-xl{display:none}
+    .pure-hidden-sm{display:none}
+}
+
+@media screen and (min-width:768px) and (max-width:1023px) {
+    .pure-visible-xs{display:none}
+    .pure-visible-sm{display:none}
+    .pure-visible-lg{display:none}
+    .pure-visible-xl{display:none}
+    .pure-hidden-md{display:none}
+}
+
+@media screen and (min-width:1024px) and (max-width:1279px) {
+    .pure-visible-xs{display:none}
+    .pure-visible-sm{display:none}
+    .pure-visible-md{display:none}
+    .pure-visible-xl{display:none}
+    .pure-hidden-lg{display:none}
+}
+
+@media screen and (min-width:1280px) {
+    .pure-visible-xs{display:none}
+    .pure-visible-sm{display:none}
+    .pure-visible-md{display:none}
+    .pure-visible-lg{display:none}
+    .pure-hidden-xl{display:none}
+}
+*/

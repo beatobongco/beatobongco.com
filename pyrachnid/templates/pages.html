@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block page_content %}
-  <div id="page_content" v-html="page_content | marked">{{ content|safe }}</div>
+  <div id="page_content" v-html="page_content | marked">{{ content }}</div>
 {% endblock %}
     
 {% block extra_js %}

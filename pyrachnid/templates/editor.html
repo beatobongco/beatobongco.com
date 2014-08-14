@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/editor.css') }}">
+{% endblock %}
+
+{% block page_content %}
+  <!-- <div class="menu">
+    <div class="pure-menu pure-menu-open">
+      <a class="pure-menu-heading">Your Site Name</a>
+
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#">Github</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">About</a></li>
+        <li class="pure-menu-heading">More Categories</li>
+        <li><a href="#">Your Company</a></li>
+        <li><a href="#">Your Friends</a></li>
+        <li><a href="#">Your Links</a></li>
+      </ul>
+    </div>
+  </div> -->
+  <div id="editor" class="pure-g">
+    <textarea id="editor-textarea" class="pure-u-1 pure-u-md-1-2" v-model="input" v-attr="rows: input.split('\n').length">{{ content }}</textarea>
+    <div class="pure-u-1 pure-u-md-1-2">
+      <div id="page_content" v-html="input | marked"></div>  
+    </div>
+    
+  </div>
+{% endblock %}
+    
+{% block extra_js %}
+  <script type="text/javascript">
+    var vm = new Vue({
+      el: '#editor',
+      filters: {
+        marked: marked
+      }
+    });
+    document.getElementById('editor-textarea').focus();
+  </script>
+{% endblock %}
+  
