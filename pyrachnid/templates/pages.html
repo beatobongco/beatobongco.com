@@ -1,16 +1,20 @@
 {% extends "base.html" %}
 
 {% block page_content %}
-  <div id="page_content" v-html="page_content | marked">{{ content }}</div>
+  <div id="page_content" v-html="page_content | marked"></div>
 {% endblock %}
     
 {% block extra_js %}
+  <script id="page-content-as-script" type="text">
+  {{ content | safe }}
+  </script>
+
   <script type="text/javascript">
     console.log(document.getElementById("page_content").innerHTML);
     var vm = new Vue({
       el: '#page_content',
       data: {
-          page_content: document.getElementById("page_content").innerHTML
+          page_content: document.getElementById("page-content-as-script").innerHTML
       },
       filters: {
           marked: marked

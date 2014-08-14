@@ -1,6 +1,10 @@
 # Hello, world!
 
-Here's how it works, you make a markdownw file and you put it in a directory. The default is /pages.
+I made this website as a sort of practice project and as a diary of all the wonderful shit I learn here at [Insync](https://insynchq.com).
+
+I wrote the code for this website with simplicity in mind. It's made up of [markdown](http://en.wikipedia.org/wiki/Markdown) files! They're text files that allow you to format your stuff so it looks good. Check out the code I wrote [on github](https://github.com/beatobongco/pyrachnid) 
+
+It's very bare-bones (no header, footer, navigation) but I hope to make it more awesome as time goes on.
 
 There's a lot of formatting you can do: (taken from [here](http://www.unexpected-vortices.com/sw/rippledoc/quick-markdown-example.html ))
 
@@ -150,7 +154,7 @@ Here's a "line block":
 
 and images can be specified like so:
 
-![example image](example-image.jpg "An exemplary image")
+![example image](https://www.drupal.org/files/test-all-the-things.jpg "An exemplary image")
 
 Inline math equations go in like so: $\omega = d\phi / dt$. Display
 math should get its own line and be put in in double-dollarsigns:
@@ -159,13 +163,6 @@ $$I = \int \rho R^{2} dV$$
 
 And note that you can backslash-escape any punctuation characters
 which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.
-
-Here's some code, thanks to prism.js:
-
-```python 
-x = 10
-print(x+10)
-```
 
 
 

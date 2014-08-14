@@ -3,10 +3,11 @@
 {% block page_content %}  
 <div id="page_content">
   <h1>My Articles</h1>
+  <i>A place to write stuff while I construct my website. - Beato Bongco</i>
 
   <ul>
   {% for article in articles %}
-    <li><a href="{{ article.url }}">{{ article.name }}</a> {{ article.date }}</li>
+    <li><a href="{{ article.url }}">{{ article.name }}</a> <br> {{ article.date }}</li>
   {% endfor %}
   </ul>
 </div>

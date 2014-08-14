@@ -43,13 +43,6 @@ def index():
 
   all_articles.sort(key=lambda x: x['date'], reverse=True)
 
-  
-
-  # temp_return = ""
-
-  # for full_file_path, file, article in all_articles:
-  #   temp_return = temp_return + "<a href='" + pages_path + file + "'>" + article.replace("#","") + "</a>" + "<br>" 
-
   return render_template('index.html', articles=all_articles)
 
 @app.route("/pages/<article>")

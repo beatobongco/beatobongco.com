@@ -1,8 +1,8 @@
-# How to set up nginx, gunicorn and flask in a fresh server
+# How to set up nginx, gunicorn and flask on a fresh server
 
 ## Preparation 
 
-1. `sudo apt-get update`
+1. ```sudo apt-get update```
 
 2. `sudo apt-get install python-dev`
 
@@ -10,30 +10,23 @@
 
 4. `sudo easy_install -U pip`
 
-5. Install virtualenvwrapper  
 
-## How to install virtualenvwrapper 
+## Install virtualenvwrapper 
 
-1. `pip install virtualenvwrapper` 
+_Optional_: You can do ```export PATH=$PATH:~/.local/bin``` so that you won't need to use sudo priveleges.
 
-You can also `pip install --local virtualenvwrapper` to install without sudo priveleges. 
+1. `sudo pip install virtualenvwrapper`   
 
-2. `nano .bashrc` and add the following line at the end `source virtualenvwrapper.sh`
+2. `nano .bashrc` and add the following line at the end `source virtualenvwrapper.sh`  
 
 3. `source .bashrc` or `. .bashrc` to reload your `.bashrc` file 
 
-
-## How to make a virtualenv
-
-1. `mkvirtualenv <your virtual env name>`
-
-2. To work on a virtualenv do `workon <your virtual env name>`
 
 ## How to install Nginx
 
 `sudo apt-get install nginx`
 
-## Some useful commands for Nginx
+### Some useful commands for Nginx
 
 * `sudo service nginx start`
 * `sudo service nginx stop`
@@ -41,6 +34,7 @@ You can also `pip install --local virtualenvwrapper` to install without sudo pri
 After each time you reconfigure Nginx, a restart or reload is needed for the new settings to come into effect.
 
 * `sudo service nginx restart`
+* `sudo nginx -s reload`
 
 ## How to configure Nginx
 
@@ -48,11 +42,11 @@ After each time you reconfigure Nginx, a restart or reload is needed for the new
 
 2. Paste this and save
 
-```
+```python
 server {
     listen 80;
 
-    server_name _;
+    server_name your server name here;
 
     access_log  /var/log/nginx/access.log;
     error_log  /var/log/nginx/error.log;
@@ -68,18 +62,32 @@ server {
 }
 ```
 
-3. sudo nginx -s reload
+3. `sudo nginx -s reload`
+
+## Make a virtualenv
+
+1. `mkvirtualenv <your virtual env name>`
+
+2. To work on a virtualenv do `workon <your virtual env name>`
+
+## Install Flask
+
+`pip install flask`
+
+Flask tips will be covered in another post.
 
 ## How to update the website:
 
 1.  First, we kill gunicorn.
 
-`pkill gunicorn`
+    `pkill gunicorn`
 
-2. Then we git pull.
+2. Then we `git clone` or `git pull` the flask app.
 
 3. Then we run gunicorn.
 
-`gunicorn -b 0.0.0.0:5000 -D pyrachnid.app:app`
+    `gunicorn -b 0.0.0.0:5000 -D pyrachnid.app:app`
+
+4. ??? Profit!
 
 
