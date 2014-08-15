@@ -78,16 +78,20 @@ Flask tips will be covered in another post.
 
 ## How to update the website:
 
-1.  First, we kill gunicorn.
+1. Go to the directory where your app is located. Work on your virtual env
+
+    `workon <your virtual env>`
+
+2. Then, we kill gunicorn.
 
     `pkill gunicorn`
 
-2. Then we `git clone` or `git pull` the flask app.
+3. Then we `git clone` or `git pull` the flask app.
 
-3. Then we run gunicorn.
+4. Then we run gunicorn.
 
     `gunicorn -b 0.0.0.0:5000 -D pyrachnid.app:app`
 
-4. ??? Profit!
+5. ??? Profit!
 
 
