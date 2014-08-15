@@ -38,29 +38,29 @@ After each time you reconfigure Nginx, a restart or reload is needed for the new
 
 ## How to configure Nginx
 
-1. sudo nano /etc/nginx/conf.d/<somename>.conf
+1. `sudo nano /etc/nginx/conf.d/<somename>.conf`
 
 2. Paste this and save
 
-```python
-server {
-    listen 80;
+    ```python
+    server {
+        listen 80;
 
-    server_name your server name here;
+        server_name your server name here;
 
-    access_log  /var/log/nginx/access.log;
-    error_log  /var/log/nginx/error.log;
+        access_log  /var/log/nginx/access.log;
+        error_log  /var/log/nginx/error.log;
 
-    location / {
-        proxy_pass         http://127.0.0.1:8000/;
-        proxy_redirect     off;
+        location / {
+            proxy_pass         http://127.0.0.1:8000/;
+            proxy_redirect     off;
 
-        proxy_set_header   Host             $host;
-        proxy_set_header   X-Real-IP        $remote_addr;
-        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+            proxy_set_header   Host             $host;
+            proxy_set_header   X-Real-IP        $remote_addr;
+            proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+        }
     }
-}
-```
+    ```
 
 3. `sudo nginx -s reload`
 

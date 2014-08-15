@@ -55,5 +55,6 @@ def show_page(article):
 @app.route("/pages/<article>/edit")
 
 def edit_page(article):
+  # need some sort of authentication for editing
   contents = get_contents(article)
   return render_template('editor.html', title=contents.split('\n', 1)[0].replace("#",""), content=contents)
