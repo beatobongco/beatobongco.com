@@ -1,0 +1,23 @@
+a.article_title {
+  font-size: 1.75em;
+  font-weight: bold;
+  color: #34495e !important;
+}
+
+a.article_title:hover {
+  text-decoration: none !important;
+  color: #7f8c8d !important;
+}
+
+div.article_card {
+  margin: 2.5% 5%;
+  padding: 25px;
+  background-color: #fff;
+  border: 1px solid #bdc3c7;
+}
+
+div#dynamic_content {
+  font-family: 'Source Sans Pro';
+  color: #2c3e50;
+  margin-right: 10%;
+}

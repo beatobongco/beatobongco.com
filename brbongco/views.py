@@ -34,7 +34,11 @@ def index():
       try:
         with open(pages_directory+file, 'r') as myarticle:
           app.logger.debug("!")
-          all_articles.append({ 'date' : time.strftime('%d %B %Y %I:%M %p', time.gmtime(os.path.getctime(pages_directory + file))), 'url' : pages_path + file.replace('.md',''), 'name' : myarticle.readline().replace('#','') })
+          all_articles.append({ 'date' : time.strftime('%d %B %Y %I:%M %p', 
+            time.localtime(os.path.getctime(pages_directory + file))), 
+          'url' : pages_path + file.replace('.md',''), 
+          'name' : myarticle.readline().replace('#',''),
+          'preview' : ''.join(myarticle.readlines()[1:4]) })
           
       except IOError:
         pass
@@ -43,7 +47,7 @@ def index():
 
   all_articles.sort(key=lambda x: x['date'], reverse=True)
 
-  return render_template('index.html', articles=all_articles)
+  return render_template('index.html', articles=all_articles, title="brbongco.com")
 
 @app.route("/pages/<article>")
 

@@ -36,6 +36,14 @@ After each time you reconfigure Nginx, a restart or reload is needed for the new
 * `sudo service nginx restart`
 * `sudo nginx -s reload`
 
+## Remove the default site from nginx configuration
+
+1. To make the default "wecome to Nginx" page go away, `cd /etc/nginx`
+
+2. `nano nginx.conf`
+
+3. Comment out the line `include /etc/nginx/sites-enabled/*`
+
 ## How to configure Nginx
 
 1. `sudo nano /etc/nginx/conf.d/<somename>.conf`
@@ -63,6 +71,7 @@ After each time you reconfigure Nginx, a restart or reload is needed for the new
     ```
 
 3. `sudo nginx -s reload`
+
 
 ## Make a virtualenv
 

@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block extra_css %}
+<link href="{{ url_for('static', filename='css/pages.css') }}" rel='stylesheet' type='text/css'>
+{% endblock %}
+
 {% block page_content %}
   <div id="page_content" v-html="page_content | marked"></div>
 {% endblock %}
@@ -8,7 +12,7 @@
   <script id="page-content-as-script" type="text">
   {{ content | safe }}
   </script>
-
+  <script type="text/javascript" src="http://vuejs.org/js/vue.min.js"></script>
   <script type="text/javascript">
     console.log(document.getElementById("page_content").innerHTML);
     var vm = new Vue({
