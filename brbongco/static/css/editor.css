@@ -19,7 +19,8 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-#editor div {
+div.main_about {
+  display: none;
 }
 
 .menu {
@@ -37,3 +38,6 @@ body {
   height: 100%;
 }
 
+div.edited-text {
+  padding: 2%;
+}
