@@ -7,12 +7,11 @@
   font-size: 1.1em;
   line-height: 1.45455em;
   width: 39em;
-  /*padding: 25px;
-  background-color: #fff;*/
 }
 
-/*h1:first-child::after {
-  content: " ";
+a#btn-edit {
   display: block;
-  border-bottom: 1px solid #7f8c8d;
-}*/
+  width: 39em;
+  margin: 10px auto;
+  text-align: right;
+}

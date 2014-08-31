@@ -21,3 +21,12 @@ div#dynamic_content {
   color: #2c3e50;
   margin-right: 10%;
 }
+
+span.article_category {
+  padding: 2px 5px;
+  background-color: #2980b9;
+  border-radius: 100px;
+  color: #fff;
+  font-family: 'Source Sans Pro';
+  font-size: 75%;
+}

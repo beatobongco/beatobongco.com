@@ -5,6 +5,9 @@
 {% endblock %}
 
 {% block page_content %}
+  {% if editable %}
+    <a id='btn-edit' href="{{ request.base_url + '/edit' }}"><button class="pure-button pure-button-primary">Edit</button></a>
+  {% endif %}
   <div id="page_content" v-html="page_content | marked"></div>
 {% endblock %}
     

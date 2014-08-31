@@ -41,3 +41,19 @@ div.main_about {
 div.edited-text {
   padding: 2%;
 }
+
+div#button-cont {
+  margin: 10px 0;
+  float: right;
+  font-family: "Source Sans Pro";
+}
+
+button#btn-save {
+  color: #fff;
+  background-color: #2ecc71;
+}
+
+span.status {
+  line-height: 56px;
+  margin-left: 10px;
+}
