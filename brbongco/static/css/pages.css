@@ -6,7 +6,7 @@
   margin-right: auto;
   font-size: 1.1em;
   line-height: 1.45455em;
-  width: 39em;
+  max-width: 39em;
 }
 
 a#btn-edit {

@@ -3,9 +3,10 @@ body {
 }
 
 #editor textarea {
-  overflow:hidden;
+  /*overflow:hidden;*/
   /*height: inherit;*/
   /*width: 40%;*/
+  min-height: 100%;
   border: none;
   border-right: 1px solid #ccc;
   font-family: "Source Code Pro";

@@ -13,9 +13,9 @@
     <div class="article_card">
       <a class="article_title" href="{{ article.url }}">{{ article.name }}</a> 
       <br>
-      <span class="article_date">{{ article.date }}</span> 
+      <span class="article_date">{{ article.date | get_date }}</span> 
       <br>
-      <span class="article_category">{{ article.category }}</span>
+      <span class="article_category {{ article.category }}">{{ article.category }}</span>
       <div class="page_preview"> {{article.preview}}</div> 
       <a class="read_more" href="{{ article.url | safe }}">Continue reading &#8594;</a>
     </div><!-- article_card -->

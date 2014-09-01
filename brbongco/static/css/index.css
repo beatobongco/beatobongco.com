@@ -24,9 +24,16 @@ div#dynamic_content {
 
 span.article_category {
   padding: 2px 5px;
-  background-color: #2980b9;
   border-radius: 100px;
   color: #fff;
   font-family: 'Source Sans Pro';
   font-size: 75%;
+}
+
+span.blog {
+  background-color: #2980b9;
+}
+
+span.notes {
+  background-color: #27ae60;
 }

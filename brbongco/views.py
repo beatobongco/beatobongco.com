@@ -3,9 +3,17 @@ from functools import wraps
 from app import app 
 
 import os
-import time
+
+from time import strftime, localtime
 from collections import OrderedDict
 from operator import itemgetter
+
+# Custom filter for jinja
+@app.template_filter()
+def get_date(value):
+    return strftime('%d %B %Y %I:%M %p', localtime(value))
+
+app.jinja_env.filters['get_date'] = get_date
 
 ### SECTION: Basic auth ###
 
@@ -61,7 +69,7 @@ def pyrachnid(article_directories):
             with open(directory+file, 'r') as myarticle:
               category = directory.split('/')[-2]
               all_articles.append({ 
-                'date' : time.strftime('%d %B %Y %I:%M %p', time.localtime(os.path.getctime( directory + file ) ) ), 
+                'date' : os.path.getctime( directory + file ), 
                 'name' : myarticle.readline().replace('#',''),
                 'preview' : ''.join(myarticle.readlines()[1:preview_lines]),
                 # Get the last level of the directory
