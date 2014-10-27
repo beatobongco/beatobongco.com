@@ -1,0 +1,97 @@
+p.article_title {
+  font-size: 1.75em;
+  font-weight: bold;
+  color: #34495e !important;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+span.blog {
+  background-color: #2980b9;
+}
+
+img.article_image { 
+  display: inline-block;
+  max-height: 200px;
+}
+
+div.article_image_cont {
+  margin-top: 10px;
+  text-align: center;
+}
+
+div.article_container {
+  position: relative;
+}
+
+div.card_overlay {
+  z-index: 9999;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0);
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+div.card_overlay:hover {
+  opacity: 1;
+  background-color: rgba(0,0,0,0.6);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+img.img-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -15px;
+  margin-top: -15px;
+}
+
+div.card_contents {
+  padding: 5%;
+}
+
+div.article_card {
+  margin: 2.5% 5%;
+  background-color: #fff;
+  border: 1px solid #bdc3c7;
+  position: relative;
+}
+
+div.page_preview {
+  text-align: center;
+  position: relative;
+  white-space: nowrap;
+}
+
+div.page_preview::before {
+  content: " ";
+  display: inline-block;
+  height: 100%;
+  width: 1%;
+  vertical-align: middle;
+}
+.braces, .preview_text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+span.braces {
+  font-size: 75px; 
+  width: 10%;
+  padding-bottom: 8px;
+}
+
+p.preview_text {
+  width: 75%;
+  text-align: center;
+  margin: 0;
+  white-space: normal;
+}

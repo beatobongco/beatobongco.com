@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<link href="{{ url_for('static', filename='css/pages.css') }}" rel='stylesheet' type='text/css'>
+{% endblock %}
+
+{% block page_content %}
+  <div class="page_content">
+  {% if editable %}
+    <div class="edit_container">
+      <a class='btn-edit' href="{{ request.base_url + '/edit' }}"><button class="pure-button pure-button-primary">Edit</button></a>
+    </div>
+    <h1 class="no_space">{{title}}</h1>
+  {% else %}
+    <h1 class="">{{title}}</h1>
+  {% endif %} 
+  <p class="article_date">Posted on {{date | get_date}}, under 
+  <span class="article_category notes">notes</span>
+  </p>
+  <hr>
+  <p class="note_content">{{ content | mistunify | safe }}</p>
+  </div>
+{% endblock %}

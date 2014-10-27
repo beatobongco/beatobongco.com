@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<link href="{{ url_for('static', filename='css/pages.css') }}" rel='stylesheet' type='text/css'>
+{% endblock %}
+
+{% block page_content %}
+  {% if editable %}
+    <a class='btn-edit' href="{{ request.base_url + '/edit' }}"><button class="pure-button pure-button-primary">Edit</button></a>
+    <hr>
+  {% endif %}
+  <div class="page_content"> 
+  <h1>{{article.title}}</h1>
+  <p class="article_date">Posted on {{article.created | get_date}} under 
+  {% for category in article.category | split_comma %}
+    {% if loop.last %}
+      <span class="article_category {{ category }}">{{ category }}</span>
+    {% else %}
+      <span class="article_category {{ category }}">{{ category }}</span><span>,</span>
+    {% endif %}
+  {% endfor %}
+  </p>
+  <hr>
+  <img class="article_image" src="{{ article.image }}">
+
+  {{ article.body | mistunify | safe}}
+  </div>
+{% endblock %}
