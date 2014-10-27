@@ -31,7 +31,7 @@
   <script type="text/javascript" src="http://vuejs.org/js/vue.min.js"></script>
   <script type="text/javascript">
     $( document ).ready(function() {
-      $('.main_content').removeClass('pure-u-md-3-4');
+    $('.main_content').removeClass('pure-u-md-3-4');
     var vm = new Vue({
       el: '#editor',
       filters: {
@@ -48,14 +48,19 @@
     $('#goto').click(function() {
       window.location.href = '{{ request.base_url.rsplit("/", 1)[0] }}';
     });
-
-    $('#btn-save').click(function() {
+    
+    function save_note(myMessage) {
       $.post( "{{ request.base_url }}",  { 'article': $('#editor-textarea').val() }, function() {
-        $('.status').text("Changes saved!").css('color', '#2ecc71');
+        $('.status').text(myMessage).css('color', '#2ecc71');
         $('#editor-textarea').focus();
       });
-    });
-    });
+    }
+    
+    $('#btn-save').click(function() { save_note("Your changes have been saved!")});
+
+    //autosave every 2 minutes
+    setInterval(function() { save_note("Changes autosaved!")}, 10000);
+  });
     
   </script>
 {% endblock %}
