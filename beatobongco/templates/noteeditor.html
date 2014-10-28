@@ -27,7 +27,6 @@
 {% endblock %}
     
 {% block extra_js %}
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="http://vuejs.org/js/vue.min.js"></script>
   <script type="text/javascript">
     $( document ).ready(function() {
@@ -39,6 +38,7 @@
       }
     });
 
+    $('.dynamic_content').show();
     $('#editor-textarea').focus();
 
     $('#editor-textarea').keyup(function() {
@@ -59,7 +59,7 @@
     $('#btn-save').click(function() { save_note("Your changes have been saved!")});
 
     //autosave every minute
-    setInterval(function() { save_note("Changes autosaved!")}, 60000);
+    setInterval(function() { save_note("Your changes have been autosaved!")}, 60000);
   });
     
   </script>

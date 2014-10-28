@@ -2,8 +2,8 @@ p.article_title {
   font-size: 1.75em;
   font-weight: bold;
   color: #34495e !important;
-  margin-top: 0;
-  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 span.blog {
@@ -11,17 +11,31 @@ span.blog {
 }
 
 img.article_image { 
-  display: inline-block;
-  max-height: 200px;
+  position: absolute;
+  top:-100%; left:0; right: 0; bottom:-100%;
+  margin: auto;
+}
+
+.article_date {
+  color: #95a5a6;
+  font-size: 0.85em;
+  margin-bottom: 5px;
 }
 
 div.article_image_cont {
-  margin-top: 10px;
-  text-align: center;
+  position: relative;
+  overflow:hidden;
+  height: 200px;
+  background-color: black;
 }
 
 div.article_container {
   position: relative;
+}
+
+.read_more {
+  text-align: right;
+  display: block;
 }
 
 div.card_overlay {
@@ -78,10 +92,11 @@ div.page_preview::before {
   width: 1%;
   vertical-align: middle;
 }
-.braces, .preview_text {
+
+/*.braces, .preview_text {
   display: inline-block;
   vertical-align: middle;
-}
+}*/
 
 span.braces {
   font-size: 75px; 
@@ -90,8 +105,9 @@ span.braces {
 }
 
 p.preview_text {
-  width: 75%;
-  text-align: center;
-  margin: 0;
-  white-space: normal;
+  margin-top: 15px;
+  /*width: 75%;
+  text-align: center;*/
+  /*margin: 0;*/
+  /*white-space: normal;*/
 }

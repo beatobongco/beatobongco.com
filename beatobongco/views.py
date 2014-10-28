@@ -188,7 +188,7 @@ def edit_blog(article):
 @app.route("/notes")
 def notes():
   articles = pyrachnid([notes_directory])
-  return render_template('index.html', articles=articles, title="Notes", heading="My Markdown Notebook in the Sky", is_notes=True)
+  return render_template('index.html', articles=articles, title="Notes", heading="My Autosaving Markdown Notebook in the Sky", is_notes=True)
 
 @app.route("/notes/<article>/")
 @app.route("/notes/<article>")
@@ -213,7 +213,7 @@ def edit_note(article):
 @app.route("/about/")
 @app.route("/about")
 def about_me():
-  return render_template('about.html', title="About Me - beatobongco.com", heading="Beato Jose R. Bongco")
+  return render_template('about.html', title="About Me - beatobongco.com")
 
 
 @app.route("/projects/")

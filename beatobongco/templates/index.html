@@ -9,7 +9,7 @@
 <hr>
 <div class="pure-g pure-g--gutter">
 {% for article in articles %}
-  <div class="article_container pure-u-1 pure-u-md-1-1 pure-u-lg-1-2 pure-u-xl-1-2">
+  <div class="article_container pure-u-1 pure-u-lg-1-2">
     <div class="article_card">
       {% if is_notes %}
       <a href="{{ article.url }}">
@@ -19,9 +19,14 @@
         <div class="card_overlay"><img class="img-link" src="{{ url_for('static', filename='img/link.png') }}"></div>
       </a>
       <div class="card_contents">
+      {% if article.image %}
+        <div class="article_image_cont">
+          <img class="article_image" src="{{ article.image }}">
+        </div>
+      {% endif %}
+        
         <p class="article_title">{{ article.title }}</p> 
-        <span class="article_date">{{ article.created | get_date }}</span> 
-        <br>
+        <div class="article_date">{{ article.created | get_date }}</div>
         {% for category in article.category | split_comma %}
         {% if loop.last %}
           <span class="article_category {{ category }}">{{ category }}</span>
@@ -29,19 +34,14 @@
           <span class="article_category {{ category }}">{{ category }}</span><span>,</span>
         {% endif %}
         {% endfor %}
-        {% if article.image %}
-        <div class="article_image_cont">
-          <img class="article_image" src="{{ article.image }}">
-        </div>
-        {% endif %}
-        <div class="page_preview"> 
-          <span class="braces">&#91;</span>
+        <!-- <div class="page_preview"> 
+          <span class="braces">&#91;</span> -->
           <p class="preview_text">
             {{article.preview}}
           </p>
-          <span class="braces">&#93;</span>
-        </div> 
-        <!-- <a class="read_more" href="{{ 'blog/' + article.url }}">Continue reading &#8594;</a> -->
+          <!-- <span class="braces">&#93;</span>
+        </div>  -->
+        <a class="read_more" href="{{ 'blog/' + article.url }}">Continue reading &#8594;</a>
       </div><!-- card_contents -->
     </div><!-- article_card -->
   </div>

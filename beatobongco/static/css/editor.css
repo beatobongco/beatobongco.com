@@ -2,10 +2,11 @@ body {
   /*padding-left: 160px;*/
 }
 
+.dynamic_content {
+  display: none;
+}
+
 #editor textarea {
-  /*overflow:hidden;*/
-  /*height: inherit;*/
-  /*width: 40%;*/
   min-height: 100%;
   border: none;
   border-right: 1px solid #ccc;

@@ -16,7 +16,7 @@
   <div class="header">
     <div class="pure-menu pure-menu-open pure-menu-horizontal">
       <ul>
-        <li><a class="brbongco" href="{{ url_for('.blog') }}">beatobongco.com</a></li>
+        <li class="brbongco-container"><a class="brbongco" href="{{ url_for('.blog') }}">beatobongco.com</a></li>
         <li><a href="{{ url_for('.blog') }}">Blog</a></li>
         <li><a href="{{ url_for('.projects') }}">Projects</a></li>
         <li><a href="{{ url_for('.notes') }}">Notebook</a></li>
@@ -26,13 +26,13 @@
   </div>
   <div class="banner"></div> 
   <div class="pure-g content">
-    <div class="pure-u-1 pure-u-md-3-4 main_content">
+    <div class="pure-u-1 pure-u-lg-3-4 main_content">
       <div class="dynamic_content">
         {% block page_content %}{% endblock %}
       </div>
     </div>
 
-    <div class="pure-u-1 pure-u-md-1-4 main_about">
+    <div class="pure-u-1 pure-u-lg-1-4 main_about">
       <div class="side_about">
         <p class="non-heading">About Me</p>
         <hr>
@@ -58,6 +58,17 @@
   </div>
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/marked/0.3.1/marked.min.js"></script>
   <script type="text/javascript" src="{{ url_for('static', filename='js/prism.js') }}"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/flowtype.js') }}"></script>
+  <script type="text/javascript">
+    // $('.article_body').flowtype({
+    //   minimum   : 500,
+    //   maximum   : 1200,
+    //   minFont   : 12,
+    //   maxFont   : 40,
+    //   fontRatio : 30
+    // });
+  </script>
   {% block extra_js %}{% endblock %}
 </body>
 </html>
